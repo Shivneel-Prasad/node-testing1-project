@@ -8,6 +8,7 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  
 }
 
 /**
@@ -20,6 +21,7 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  
 }
 
 /**
@@ -32,6 +34,7 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+  
 }
 
 class Counter {
@@ -41,6 +44,7 @@ class Counter {
    */
   constructor(initialNumber) {
     // ✨ initialize whatever properties are needed
+    
   }
 
   /**
@@ -57,6 +61,7 @@ class Counter {
    */
   countDown() {
     // ✨ implement
+    
   }
 }
 
@@ -66,6 +71,7 @@ class Seasons {
    */
   constructor() {
     // ✨ initialize whatever properties are needed
+    
   }
 
   /**
@@ -82,6 +88,7 @@ class Seasons {
    */
   next() {
     // ✨ implement
+    
   }
 }
 
@@ -113,6 +120,7 @@ class Car {
    */
   drive(distance) {
     // ✨ implement
+    
   }
 
   /**
@@ -128,6 +136,7 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
+    
   }
 }
 
@@ -146,6 +155,7 @@ class Car {
  */
 function isEvenNumberAsync(number) {
   // ✨ implement
+  
 }
 
 module.exports = {
