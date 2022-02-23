@@ -30,10 +30,10 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  test('[5] returns the largest number in an array of objects { integer: 2 }', () => {
-    const largeInt = [ { integers: 0 }, { integers: 1 }, { integers: 2 } ]
+  test('[5] returns the largest number in an array of objects { integer: 3 }', () => {
+    const largeInt = [ { integers: 0 }, { integers: 1 }, { integers: 2 }, { integers: 3 } ]
     const expected = utils.findLargestInteger(largeInt)
-    expect(expected).toBe(2)
+    expect(expected).toBe(3)
   })
 })
 
@@ -98,16 +98,41 @@ describe('[Exercise 5] Seasons', () => {
 
 describe('[Exercise 6] Car', () => {
   let focus
-  // beforeEach(() => {
-  //   focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
-  // })
-  // test('[15] driving the car returns the updated odometer', () => {})
-  // test('[16] driving the car uses gas', () => {})
-  // test('[17] refueling allows to keep driving', () => {})
-  // test('[18] adding fuel to a full tank has no effect', () => {})
+  beforeEach(() => {
+    focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
+  })
+  test('[15] driving the car returns the updated odometer', () => {
+    expect(focus.drive(100)).toBe(100)
+    expect(focus.drive(100)).toBe(200)
+    expect(focus.drive(100)).toBe(300)
+    expect(focus.drive(200)).toBe(500)
+  })
+  test('[16] driving the car uses gas', () => {
+    focus.drive(600)
+    expect(focus.tank).toBe(0)
+  })
+  test('[17] refueling allows to keep driving', () => {
+    focus.drive(500)
+    focus.refuel(10)
+    focus.drive(100)
+    expect(focus.odometer).toBe(600)
+  })
+  test('[18] adding fuel to a full tank has no effect', () => {
+    focus.drive(300)
+    expect(focus.tank).toBe(10)
+    focus.refuel(150)
+  })
 })
 
 describe('[Exercise 7] isEvenNumberAsync', () => {
-  // test('[19] resolves true if passed an even number', () => {})
-  // test('[20] resolves false if passed an odd number', () => {})
+  test('[19] resolves true if passed an even number', async () => {
+    const even = 2;
+    const outcome = await utils.isEvenNumberAsync(even);
+    expect(outcome).toBe(true)
+  })
+  test('[20] resolves false if passed an odd number', async () => {
+    const odd = 3;
+    const outcome = await utils.isEvenNumberAsync(odd);
+    expect(outcome).toBe(false)
+  })
 })
